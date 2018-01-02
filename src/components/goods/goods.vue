@@ -102,7 +102,7 @@
         }
         let foodList = this.$refs.foodList;
         let el = foodList[index];
-        this.foodsScroll.scrollToElement(el, 300);k
+        this.foodsScroll.scrollToElement(el, 300);
       },
       addFood(target) {
         this._drop(target);
