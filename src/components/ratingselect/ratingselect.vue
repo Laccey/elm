@@ -71,12 +71,12 @@
         this.myselectType = type;
         this.$emit('ratingtype.select', type);
       },
-      toggleContent(event) {
+      toggleContent(onlyContent, event) {
         if (!event._constructed) {
           return;
         }
         this.myonlyContent = !this.myonlyContent;
-        this.$emit('content.toggle', this.myonlyContent);
+        this.$emit('content.toggle', onlyContent);
       }
     }
   };
