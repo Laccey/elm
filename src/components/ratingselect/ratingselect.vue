@@ -69,14 +69,14 @@
           return;
         }
         this.myselectType = type;
-        this.$emit('ratingtype.select', type);
+        this.$emit('ratingtype-select', type);
       },
-      toggleContent(onlyContent, event) {
+      toggleContent(event) {
         if (!event._constructed) {
           return;
         }
         this.myonlyContent = !this.myonlyContent;
-        this.$emit('content.toggle', onlyContent);
+        this.$emit('content-toggle', this.myonlyContent);
       }
     }
   };
