@@ -9,10 +9,10 @@ import seller from '../components/seller/seller';
 Vue.use(Router);
 
  const routes = [
-// {
-//   path: '/',
-//   redirect: '/goods'
-// },
+  {
+    path: '/',
+    redirect: '/goods'
+  },
   {
     path: '/goods',
     component: goods

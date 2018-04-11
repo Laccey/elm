@@ -25,7 +25,8 @@
         </div>
       </div>
       <split></split>
-      <ratingselect @ratingtype-select="ratingtypeSelect" @content-toggle="contentToggle" :select-type="selectType" :only-content="onlyContent" :ratings="ratings"></ratingselect>
+      <!--<ratingselect @ratingtype-select="ratingtypeSelect" @content-toggle="contentToggle" :select-type="selectType" :only-content="onlyContent" :ratings="ratings"></ratingselect>-->
+      <ratingselectd @ratingtype-select="ratingtypeSelect" @content-toggle="contentToggle" :select-type="selectType" :only-content="onlyContent" :ratings="ratings"></ratingselectd>
       <div class="rating-wrapper">
         <ul>
           <li v-show="needShow(rating.rateType,rating.text)" class="rating-item border-1px" v-for="rating in ratings">
@@ -56,7 +57,7 @@
 <script type="text/ecmascript-6">
   import star from '../star/star';
   import split from '../split/split';
-  import ratingselect from '../ratingselect/ratingselect';
+  import ratingselectd from '../ratingselect/ratingselectd';
   import BScroll from 'better-scroll';
   import {formatDate} from '../../common/js/date';
 
@@ -97,8 +98,8 @@
           this.scroll.refresh();
         });
       },
-      contentToggle(onlyContent) {
-        this.onlyContent = onlyContent;
+      contentToggle() {
+        this.onlyContent = !this.onlyContent;
         this.$nextTick(() => {
           this.scroll.refresh();
         });
@@ -123,7 +124,7 @@
     components: {
       star,
       split,
-      ratingselect,
+      ratingselectd,
       BScroll
     }
   };

@@ -31,7 +31,7 @@
         <split v-show="food.info"></split>
         <div class="ratings" v-show="food.ratings">
           <h1 class="title">商品评价</h1>
-          <ratingselect @ratingtype-select="ratingtypeSelect" @content-toggle="contentToggle" :select-type="selectType" :only-content="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselect>
+          <ratingselectd @ratingtype-select="ratingtypeSelect" @content-toggle="contentToggle" :select-type="selectType" :only-content="onlyContent" :desc="desc" :ratings="food.ratings"></ratingselectd>
           <div class="rating-wrapper">
             <ul v-show="food.ratings && food.ratings.length">
               <li v-show="needShow(rating.rateType,rating.text)" v-for="rating in food.ratings" class="rating-item border-1px">
@@ -59,7 +59,7 @@
   import cartcontrol from '../cartcontrol/cartcontrol';
   import Vue from 'vue';
   import split from '../split/split';
-  import ratingselect from '../ratingselect/ratingselect';
+  import ratingselectd from '../ratingselect/ratingselectd';
   import {formatDate} from '../../common/js/date';
 
   // const POSITIVE = 0;
@@ -127,8 +127,8 @@
           this.scroll.refresh();
         });
       },
-      contentToggle(onlyContent) {
-        this.onlyContent = onlyContent;
+      contentToggle() {
+        this.onlyContent = !this.onlyContent;
         this.$nextTick(() => {
           this.scroll.refresh();
         });
@@ -143,7 +143,7 @@
     components: {
       cartcontrol,
       split,
-      ratingselect
+      ratingselectd
     }
   };
 </script>

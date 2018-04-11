@@ -64,6 +64,7 @@
           <li class="info-item border-1px" v-for="info in seller.infos">{{info}}</li>
         </ul>
       </div>
+      <!--<mt-button @click.native="handleClick">按钮</mt-button>-->
     </div>
   </div>
 </template>
@@ -73,6 +74,7 @@
   import split from '../split/split';
   import BScroll from 'better-scroll';
   import {saveToLocal, loadFromLocal} from '../../common/js/store';
+  // import { Button, Toast } from 'mint-ui';
 
   export default {
     // name: 'seller'
@@ -122,6 +124,16 @@
         this.favorite = !this.favorite;
         saveToLocal(this.seller.id, 'favorite', this.favorite);
       }
+      // handleClick() {
+      //   if (!event._constructed) {
+      //     return;
+      //   }
+      //   Toast({
+      //     message: '操作成功',
+      //     position: 'bottom',
+      //     duration: 5000
+      //   });
+      // }
     },
     watch: {
       'seller'() {
@@ -138,6 +150,7 @@
       star,
       split,
       BScroll
+      // 'mt-button': Button
     }
   };
 </script>
@@ -293,4 +306,10 @@
           border-1px(rgba(7,17,27,0.1));
           &:last-child
             border-none();
+      .tt
+        display: inline-block;
+        width:100px;
+        height:50px;
+        background:red;
+        color:#fff;
 </style>

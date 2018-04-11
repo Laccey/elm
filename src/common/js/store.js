@@ -1,5 +1,6 @@
 export function saveToLocal(id, key, value) {
   let seller = window.localStorage.__seller__;
+  console.log(window.localStorage);
   if (!seller) {
     seller = {};
     seller[id] = {};

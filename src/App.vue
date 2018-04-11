@@ -38,12 +38,12 @@
       };
     },
     created() {
-      this.$http.get('/api/seller?id' + this.seller.id).then((response) => {
+      this.$http.get('/api/seller?id=' + this.seller.id).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
           // 给对象扩展属性
           this.seller = Object.assign({}, this.seller, response.data);
-        }
+      }
       });
     },
     components: {
